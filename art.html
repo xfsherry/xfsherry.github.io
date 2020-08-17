@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Art</title>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="nav-link-wrapper">
+                <a href="index.html"> Me</a>
+            </div>
+    
+            <div class="nav-link-wrapper">
+                <a href="projects.html"> Projects</a>
+            </div>  
+    
+            <div class="nav-link-wrapper active-nav-link">
+                <a href="art.html"> Art</a>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="art-items-wrapper">
+                <div class="art-item-wrapper">
+                    <div class="art-img" style="background-image:url(images/art/img1.jpg)">
+                    
+                    </div>
+                    <div class="img-text-wrapper">
+                        <div class="subtitle">
+                            Acrylic on wood
+                            14"x18"
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-item-wrapper">
+                    <div class="art-img" style="background-image:url(images/art/img2.jpg)">
+                    
+                    </div>
+                    <div class="img-text-wrapper">
+                        <div class="subtitle">
+                            Acrylic on wood
+                            12"x12"
+                        </div>
+                    </div>
+                </div>
+
+                <div class="art-item-wrapper">
+                    <div class="art-img" style="background-image:url(images/art/img3.jpg)">
+                    
+                    </div>
+                    <div class="img-text-wrapper">
+                        <div class="subtitle">
+                            Acrylic on canvas
+                            8"x10"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+
+            <span class="close">&times;</span>
+          
+            <img class="modal-content" id="img01">
+          
+        </div>
+
+    </div>
+</body>
+
+<script>
+    const artItems = document.querySelectorAll('.art-item-wrapper')
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("img01");
+
+    artItems.forEach(artItem => {
+
+        artItem.addEventListener('mouseover', () => {
+            artItem.childNodes[1].classList.add('img-darken');
+        })
+
+        artItem.addEventListener('mouseout', () => {
+            artItem.childNodes[1].classList.remove('img-darken');
+        })
+    })
+
+    for(let i = 0; i < artItems.length; i++){
+        artItems[i].onclick = function(){
+        modal.style.display = "block";
+        switch(i) {
+            case 0:
+                modalImg.src = "images/art/img1.jpg";
+                break;
+            case 1:
+                modalImg.src = "images/art/img2.jpg";
+                break;
+            case 2:
+                modalImg.src = "images/art/img3.jpg";
+                break;
+        }}
+    }
+
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+</script>
+
+</html>
