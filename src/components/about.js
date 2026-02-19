@@ -14,7 +14,7 @@ export default function About() {
             My name's Sherry. 
           </Typography>
           <Typography align='center'>
-            I'm a student at University of British Columbia majoring in Computer Science and trying to navigate my way through the adult world.
+            I'm a graduate from the University of British Columbia majoring in Computer Science and trying to navigate my way through the adult world.
           </Typography>
           <Typography align='center'>
             I love to paint and draw and that's what drew me to computer science initially. The idea of being able to create something and have other people enjoy it as well,
